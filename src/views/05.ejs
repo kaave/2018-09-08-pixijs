@@ -1,0 +1,17 @@
+<%
+const configs = {
+  title: 'top',
+  description: 'This is top page',
+  styles: ['05.css'],
+  scripts: ['05.js'],
+  metaImage: 'https://dummyimage.com/600x400/333/ddd.png&text=Dummy+image',
+};
+%>
+
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<%- include('common/_head.ejs', { ...configs }) %>
+<body>
+    <%- include('common/_foot.ejs', { ...configs }) %>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import "sanitize.css";
+@import "./common/_global.css";
+
+canvas {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
+
+.Pane {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border-bottom: solid 3px #000;
+}
+
+.Pane__header {
+    font-size: 10vw;
+    background: hsla(0, 0%, 100%, 0.7);
+}

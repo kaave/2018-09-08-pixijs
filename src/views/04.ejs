@@ -1,0 +1,24 @@
+<%
+const configs = {
+  title: 'top',
+  description: 'This is top page',
+  styles: ['04.css'],
+  scripts: ['04.js'],
+  metaImage: 'https://dummyimage.com/600x400/333/ddd.png&text=Dummy+image',
+};
+%>
+
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<%- include('common/_head.ejs', { ...configs }) %>
+<body>
+    <% [...Array(5).keys()].forEach(index => { %>
+    <section class="Pane">
+        <h2 class="Pane__header">
+            <%- (index + 1) * 100 %>vh!
+        </h2>
+    </section>
+    <% }) %>
+    <%- include('common/_foot.ejs', { ...configs }) %>
+</body>
+</html>

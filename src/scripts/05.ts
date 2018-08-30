@@ -36,12 +36,27 @@ Promise.all([loadImages(), loadDOM()]).then(() => {
 
   const { texture } = PIXI.loader.resources.unsplash;
   const { size, point } = getCoverSize(texture, renderer);
-  const sprite = new PIXI.Sprite(texture);
-  sprite.position.set(point.x, point.y);
-  sprite.width = size.width;
-  sprite.height = size.height;
-  sprite.texture.frame = new PIXI.Rectangle(0, 0, texture.width, texture.height);
-  stage.addChild(sprite);
+  const widthRatio = size.width / texture.width;
+  let currentX = 0;
+  const sprites: PIXI.Sprite[] = [];
+  while (true) {
+    const sprite = new PIXI.Sprite(texture.clone());
+    const randomWidth = Math.ceil(Math.random() * 10);
+    const width = currentX + randomWidth > texture.width ? texture.width - currentX : randomWidth;
+    sprite.position.set(currentX * widthRatio, point.y);
+    sprite.width = size.width;
+    sprite.height = size.height;
+    sprite.texture.frame = new PIXI.Rectangle(currentX, 0, width, texture.height);
+    sprites.push(sprite);
+    stage.addChild(sprite);
+    currentX += width;
+
+    if (currentX >= texture.width) {
+      break;
+    }
+  }
+
+  app.ticker.add(() => sprites.forEach((sprite, index) => (sprite.y += index % 2 === 0 ? 2 : -2)));
 
   document.body.appendChild(renderer.view);
 });

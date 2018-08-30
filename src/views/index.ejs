@@ -12,39 +12,41 @@ const configs = {
 <html lang="<%= lang %>">
 <%- include('common/_head.ejs', { ...configs }) %>
 <body>
-    <h1>
-        2018/09/08 イメージエフェクターとして使うPixiJS サンプル集
-    </h1>
-    <main id="main" class="Main" role="main">
-        <ul>
-            <li>
-                <a href="alex-iby-628881-unsplash.jpg">
-                    サンプルで使う画像その1
-                </a>
-                <a href="https://unsplash.com/photos/MmEzn_tFZSo" target="_blank" rel="noopener" style="margin-left: 1em;">
-                    元ネタはコチラ
-                </a>
-            </li>
-            <li>
-                <a href="anastasia-taioglou-214774-unsplash.jpg">
-                    サンプルで使う画像その2
-                </a>
-                <a href="https://unsplash.com/photos/CTivHyiTbFw" target="_blank" rel="noopener" style="margin-left: 1em;">
-                    元ネタはコチラ
-                </a>
-            </li>
-        </ul>
-        <ol>
-            <li><a href="01.html">画像読み込んで表示するだけ</a></li>
-            <li><a href="02.html">サイズ調整: <code>background-position: cover;</code>とおなじことをやる</a></li>
-            <li><a href="03.html">フィルタを適当にかけてみる</a></li>
-            <li><a href="04.html">フィルタのパラメータをスクロール位置の値を拾ってかけてみる</a></li>
-            <li><a href="05.html">一枚の画像をスライスしてみる</a></li>
-            <li><a href="06.html">マスク処理</a></li>
-            <li><a href="07.html">グリッチ</a></li>
-            <li><a href="extra.html">ページまるごとグリッチ</a></li>
-        </ol>
-    </main>
-    <%- include('common/_foot.ejs', { ...configs }) %>
+    <div class="Body__inner">
+        <h1>
+            2018/09/08 イメージエフェクターとして使うPixiJS サンプル集
+        </h1>
+        <main id="main" class="Main" role="main">
+            <ul>
+                <li>
+                    <a href="alex-iby-628881-unsplash.jpg">
+                        サンプルで使う画像その1
+                    </a>
+                    <a href="https://unsplash.com/photos/MmEzn_tFZSo" target="_blank" rel="noopener" style="margin-left: 1em;">
+                        元ネタはコチラ
+                    </a>
+                </li>
+                <li>
+                    <a href="anastasia-taioglou-214774-unsplash.jpg">
+                        サンプルで使う画像その2
+                    </a>
+                    <a href="https://unsplash.com/photos/CTivHyiTbFw" target="_blank" rel="noopener" style="margin-left: 1em;">
+                        元ネタはコチラ
+                    </a>
+                </li>
+            </ul>
+            <ol>
+                <li><a href="01.html">画像読み込んで表示するだけ</a></li>
+                <li><a href="02.html">サイズ調整: <code>background-position: cover;</code>とおなじことをやる</a></li>
+                <li><a href="03.html">フィルタを適当にかけてみる</a></li>
+                <li><a href="04.html">フィルタのパラメータをスクロール位置の値を拾ってかけてみる</a></li>
+                <li><a href="05.html">一枚の画像をスライスしてみる</a></li>
+                <li><a href="06.html">マスク処理</a></li>
+                <li><a href="07.html">グリッチ</a></li>
+                <li><a href="#">おまけ</a></li>
+            </ol>
+        </main>
+        <%- include('common/_foot.ejs', { ...configs }) %>
+    </div>
 </body>
 </html>

@@ -93,6 +93,7 @@ Promise.all([loadImages(), loadDOM()]).then(() => {
     app.render();
     requestAnimationFrame(animation);
   };
+  requestAnimationFrame(animation);
 
   document.body.appendChild(renderer.view);
 });

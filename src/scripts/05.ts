@@ -43,19 +43,5 @@ Promise.all([loadImages(), loadDOM()]).then(() => {
   sprite.texture.frame = new PIXI.Rectangle(0, 0, texture.width, texture.height);
   stage.addChild(sprite);
 
-  const mask = new PIXI.Graphics();
-  mask.beginFill(0);
-  mask.moveTo(50, 50);
-  mask.lineTo(300, 50);
-  mask.lineTo(300, 300);
-  mask.lineTo(50, 300);
-  mask.lineTo(50, 50);
-  mask.endFill();
-  sprite.mask = mask;
-  stage.addChild(mask);
-
-  app.ticker.add(() => {
-    mask.x += 1;
-  });
   document.body.appendChild(renderer.view);
 });

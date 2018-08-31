@@ -38,7 +38,12 @@ exports.plugins = [
 
 exports.optimization = {
   splitChunks: {
-    name: 'vendor.bundle',
-    chunks: 'initial',
+    cacheGroups: {
+      vendor: {
+        test: /[\\/]node_modules[\\/]/,
+        name: 'vendor.bundle',
+        chunks: 'initial',
+      },
+    }
   }
 };

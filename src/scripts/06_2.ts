@@ -27,12 +27,21 @@ function createMaskRect(mask: PIXI.Graphics, topLeftX: number, degree: number, w
   const bottomRightX = topRightX - Math.tan(degree * (Math.PI / 180)) * height;
   const bottomLeftX = bottomRightX - width;
 
+  const offset = window.innerWidth / 4;
+
   mask.clear();
   mask.beginFill(0);
-  mask.moveTo(topLeftX, 0);
-  mask.lineTo(topRightX, 0);
-  mask.lineTo(bottomRightX, height);
-  mask.lineTo(bottomLeftX, height);
+  mask.moveTo(topLeftX + offset, 0);
+  mask.lineTo(topRightX + offset, 0);
+  mask.lineTo(bottomRightX + offset, height);
+  mask.lineTo(bottomLeftX + offset, height);
+  mask.endFill();
+
+  mask.beginFill(0);
+  mask.moveTo(topLeftX - offset, 0);
+  mask.lineTo(topRightX - offset, 0);
+  mask.lineTo(bottomRightX - offset, height);
+  mask.lineTo(bottomLeftX - offset, height);
   mask.endFill();
 }
 

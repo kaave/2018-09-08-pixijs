@@ -1,0 +1,24 @@
+<%
+const configs = {
+  title: 'top',
+  description: 'This is top page',
+  styles: ['08.css'],
+  scripts: ['08.js'],
+  metaImage: 'https://dummyimage.com/600x400/333/ddd.png&text=Dummy+image',
+};
+%>
+
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<%- include('common/_head.ejs', { ...configs }) %>
+<body>
+    <form class="Source">
+        <select class="Source__select"></select>
+        <input type="file" class="Source__file">
+    </form>
+    <div class="License">
+        original source by <a href="https://github.com/ktingvoar/PixiGlitch" class="License__link">ktingvoar/PixiGlitch</a>, <a href="https://github.com/maxillacult/ofxPostGlitch" class="License__link">maxillacult/ofxPostGlitch</a>
+    </div>
+      <%- include('common/_foot.ejs', { ...configs }) %>
+</body>
+</html>
